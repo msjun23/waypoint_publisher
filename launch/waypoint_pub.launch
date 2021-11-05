@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="waypoint_publisher" type="waypoint_pub"  name="waypoint_pub" >
+    <remap from="waypoint" to="/move_base_simple/goal" />
+  </node>
+
+</launch>
