@@ -1,0 +1,11 @@
+<launch>
+    <arg name="robot_ns" default="ns1"/>
+
+    <group ns="$(arg robot_ns)">
+        <node pkg="waypoint_publisher" type="robot_pose_pub" name="robot_pose_pub" >
+            <rosparam command="load" file="$(find waypoint_publisher)/param/robot_$(arg robot_ns).yaml" />
+            <remap from="/move_base_simple/goal" to="/$(arg robot_ns)/move_base_simple/goal" />
+            <remap from="/reach" to="/$(arg robot_ns)/reach" />
+        </node>
+    </group>
+</launch>

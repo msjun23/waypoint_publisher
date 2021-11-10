@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   actionlib
   actionlib_msgs
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
@@ -139,6 +140,8 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/waypoint_publisher_node.cpp)
 add_executable(waypoint_pub src/waypoint_pub.cpp)
 add_executable(waypoint_repeat src/waypoint_repeat.cpp)
+add_executable(robot_pose_saver src/robot_pose_saver.cpp)
+add_executable(robot_pose_pub src/robot_pose_pub.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -158,6 +161,12 @@ target_link_libraries(waypoint_pub
   ${catkin_LIBRARIES}
 )
 target_link_libraries(waypoint_repeat
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(robot_pose_saver
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(robot_pose_pub
   ${catkin_LIBRARIES}
 )
 
