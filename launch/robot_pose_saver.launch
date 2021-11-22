@@ -1,7 +1,0 @@
-<launch>
-    <arg name="robot_ns" default="ns1"/>
-
-    <group ns="ns1">
-        <node pkg="waypoint_publisher" type="robot_pose_saver" name="robot_pose_saver"/>
-    </group>
-</launch>
